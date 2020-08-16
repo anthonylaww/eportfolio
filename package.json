@@ -1,0 +1,22 @@
+{
+  "name": "eportfolio",
+  "version": "1.0.0",
+  "description": "My eportfolio",
+  "main": "index.js",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "polyfill": "^0.1.0"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^4.3.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --open"
+  },
+  "author": "Anthony Law",
+  "license": "ISC"
+}
