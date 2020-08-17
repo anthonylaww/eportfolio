@@ -1,3 +1,5 @@
+import "particles.js";
+
 $(document).ready(function() {
     // executes when HTML-Document is loaded and DOM is ready
     $( ".project_card" ).hover(
@@ -7,4 +9,6 @@ $(document).ready(function() {
             $(this).removeClass('shadow-lg');
         }
     );
+    /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+    particlesJS.load('particles-js', '../assets/particles.json');
 });

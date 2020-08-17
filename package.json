@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "particles.js": "^2.0.0",
     "polyfill": "^0.1.0"
   },
   "devDependencies": {
