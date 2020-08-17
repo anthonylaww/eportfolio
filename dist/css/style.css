@@ -12,6 +12,17 @@ html, body {
 	z-index: 1000;
 }
 
+.snap-container {
+	scroll-snap-type: y mandatory;
+	overflow-y: scroll;
+
+	height: 100vh;
+	}
+
+	.snap-container .container-md {
+		scroll-snap-align: center;
+	}
+
 .name {
 	position: relative;
 	left: 20px;
@@ -36,7 +47,6 @@ html, body {
 
 #container-intro {
 	display: grid;
-	grid-template-columns: repeat(3, minmax(300px, 1fr));
 	grid-template-columns: 6fr 2.5fr;
 
 	background-image: -webkit-linear-gradient(left, #92805d, rgb(160, 111, 66));
@@ -49,8 +59,9 @@ html, body {
 }
 
 #container-projects {
-	display: block;
-	height: calc(100vh - 75px);
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 3fr 6fr 1fr;
 	background-color: #dadada;
 }
 
@@ -120,8 +131,10 @@ html, body {
 }
 
 .projects{
-	padding-top: 3%;
-	padding-bottom: 2%;
+	padding-top: 7%;
+	grid-row: 1/2;
+	grid-column: 1/4;
+	
 
 	text-align: center;
 }
@@ -134,9 +147,8 @@ html, body {
 	width: 100%; 
 	text-align: center; 
 	border-bottom: 1.5px solid #000; 
+	bottom: 0px;
 	line-height: 0em;
-	margin: 10px 0 20px; 
-
 }
 
 #projects__title span { 
@@ -145,6 +157,8 @@ html, body {
 }
 
 #projects__cards {
+	grid-column: 1/4;
+	grid-row: 2/3;
 	width: 100vw;
 	justify-content: space-evenly;
 }
