@@ -4,6 +4,7 @@
   "description": "My eportfolio",
   "main": "index.js",
   "dependencies": {
+    "aws-sdk": "^2.735.0",
     "babel-polyfill": "^6.26.0",
     "particles.js": "^2.0.0",
     "polyfill": "^0.1.0"

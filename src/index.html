@@ -11,7 +11,7 @@
     <script src="particles.js"></script>
     <title>Anthony Law - ePortfolio</title>
 </head>
-<body onload="preloader()">
+<body id='page' onload="preloader()">
 
     <div id="preloader">
         <div class="loader">Loading...</div>
@@ -50,10 +50,12 @@
 
 
         </nav>
-        
+                
     </header>
 
     <div class="snap-container">
+        <progress max="110" value="30"></progress>
+
         <div class="container-md" id="container-intro">
 
             <!-- INTRO -->
@@ -88,7 +90,7 @@
     
                 <p>
                     Aside from music, when I go out I love to take photos and recently have gotten more serious about photography.
-                    You can find some of my better photos below in the <a href="#container-photography">gallery</a>.
+                    You can find some of my better photos below in the <a href="#container__photography">gallery</a>.
                 </p>
     
             </div>
@@ -108,7 +110,7 @@
                         <img class=".img-responsive" style="height: auto; width: 11em; max-width:100%" src="./assets/bepis_bot.png">
                         <p class="card-text">
                             Instead of paying for a licenced reaction role bot for the Warwick Card Games server - a subcommunity within Warwick Esports, 
-                            I created Bepis bot instead. There is a designated message that members will add a reaction to, in order to receive a role on the server.
+                            I created Bepis bot. There is a designated message that members will add a reaction to, in order to receive a role on the server.
                             The roles then give them permissions to write and read messages within the subcommunities - i.e. if you reacted with a Hearthstone emote, 
                             you can then see Hearthstone related messages.
                         </p>
@@ -142,18 +144,9 @@
         </div>
     
         <div class="container-md" id="container__photography">
-            <div class="photography__comment">
-                <h1>My photography</h1>
-            
-                <!-- DIVIDER -->
-    
-                <hr class="solid">
-    
-                <!-- TEXT -->
-    
-                <p>I've always had a passion for photography and here I have a compilation of some of the photos I have taken over the years. </p>
-    
-            </div>
+                <div class="photography">
+                    <h1 id="photography__title"><span>PHOTOGRAPHY</span></h1>
+                </div>
             <div class="photography__gallery">
                 <div id="gallery" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
@@ -221,6 +214,7 @@
             </div>
             
         </div>
+        <div id="particles-js"></div>
     </div>
 
     <script src="js/bundle.js"></script>

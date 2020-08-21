@@ -20,7 +20,7 @@ html, body {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .intro__text, #projects__cards {
-	overflow: scroll;
+	overflow-y: scroll;
 	-ms-overflow-style: none;  /* IE and Edge */
 	scrollbar-width: none;  /* Firefox */
 }
@@ -28,19 +28,22 @@ html, body {
 .snap-container {
 	scroll-snap-type: y mandatory;
 	overflow-y: scroll;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
 
 	height: 100vh;
-	}
+	z-index: -100;
+}
 
-	.snap-container .container-md {
-		scroll-snap-align: center;
-	}
+.snap-container .container-md {
+	scroll-snap-align: center;
+}
 
 .name {
 	position: relative;
 	left: 20px;
 
-	font-size: 3em;
+	font-size: 30px;
 
 	font-family: 'Montserrat', sans-serif;
     color: white;
@@ -64,8 +67,6 @@ html, body {
 	display: grid;
 	grid-template-columns: 6fr 2.5fr;
 
-	background-image: -webkit-linear-gradient(left, #92805d, rgb(160, 111, 66));
-
 	z-index: 200;
 
 	box-shadow: 0px 8px 4px #27272740;
@@ -83,14 +84,7 @@ html, body {
 
 #container__photography{
 	display: grid;
-
-	grid-template-columns: 1fr 2fr;
-	grid-template-rows: 70px 1fr 3fr 1fr;
-	background-image: -webkit-linear-gradient(left, #92805d, rgb(160, 111, 66));
-
-	box-shadow: 0px -8px 4px #27272740;
-	-webkit-box-shadow: 0px -8px 4px #27272740;
-	-moz-box-shadow: 0px -8px 4px #27272740;
+	grid-template-rows: 70px 1fr 7fr 1fr;
 }
 
 #me {
@@ -102,54 +96,28 @@ html, body {
 	box-shadow:         12px 12px 29px #27272780;
 }
 
-.photography__comment {
-	position: relative;
-
-	grid-column: 1/2;
-	grid-row: 2/5;
-	background-color: white;
-
-	width: 100%;
-	height: 100%;
-
-	padding: 5%;
-}
-
-.photography__comment > h1 {
-	font-size: 3em;
-	font-family: 'Montserrat', sans-serif;
-	text-transform: uppercase;
-}
-
-.photography__comment > p{
-	font-size: 1.8em;
-}
-
 .photography__gallery {
-	height: 100%;
-	grid-column: 2/3;
+	padding-top: 20px;
+	height: 700px;
+	width: 70%;
+	margin: auto;
 	grid-row: 3/4;
-
-	box-shadow: 
-		0px 4px 2px #27272740,
-		0px -4px 2px #27272740;
-	-webkit-box-shadow: 
-		0px 4px 2px #27272740,
-		0px -4px 2px #27272740;
-	-moz-box-shadow: 
-		0px 4px 2px #27272740,
-		0px -4px 2px #27272740;
 }
 
 .projects{
 	grid-row: 2/3;
 	grid-column: 1/4;
-	
 
 	text-align: center;
 }
 
-#projects__title {
+.photography{
+	grid-row: 2/3;
+	text-align: center;
+}
+
+#projects__title,
+#photography__title {
 	padding-top: 60px;
 	font-family: 'Montserrat', sans-serif;
 	text-transform: uppercase;
@@ -157,14 +125,39 @@ html, body {
 
 	width: 100%; 
 	text-align: center; 
-	border-bottom: 1.5px solid #000; 
 	bottom: 0px;
 	line-height: 0em;
 }
 
-#projects__title span { 
-	padding:0 20px; 
-	background: #dadada;
+#projects__title span,
+#photography__title span { 
+	padding:0 20px;
+	position: relative;  
+	display: inline-block; 
+}
+
+#projects__title span:before,
+#projects__title span:after,
+#photography__title span:before,
+#photography__title span:after {
+	content: "";
+	position: absolute;
+	height: 5px;
+	border-bottom: 1px solid black;
+	top: 0;
+	width: 200%;
+}
+
+#projects__title span:before,
+#photography__title span:before {
+	right: 100%;
+	margin-right: 15px;
+}
+
+#projects__title span:after,
+#photography__title span:after {
+	left: 100%;
+	margin-left: 15px;
 }
 
 #projects__cards {
@@ -186,13 +179,13 @@ html, body {
 }
 
 .card-title{
-	font-size: 3em;
+	font-size: 30px;
 	margin: 0;
 	padding: .5rem;
 }
 
 .card-text{
-	font-size: 1.8em;
+	font-size: 18px;
 	padding: .5rem;
 }
 
@@ -223,7 +216,7 @@ html, body {
 
 .intro__text {
 	position: relative;
-	background-color: #ffffff;
+	background-color: #ffffffe5;
 	grid-column-start: 2;
 
 	height: 100%;
@@ -234,14 +227,14 @@ html, body {
 .intro__text > h1 {
 	margin-top: 80px;
 
-	font-size: 3em;
+	font-size: 30px;
 	font-family: 'Montserrat', sans-serif;
 	text-transform: uppercase;
 }
 
 .intro__text > p{
 	font-family: 'Quicksand', sans-serif;
-	font-size: 1.8em;
+	font-size: 18px;
 }
 
 #about__me-head {
@@ -276,6 +269,7 @@ html, body {
 	font-family: 'Montserrat', sans-serif;
 	text-transform: uppercase;
 	font-weight: 900;
+	font-size: 20px;
 	color: rgb(160, 111, 66);
 	letter-spacing: 0.2em;
 
@@ -290,15 +284,15 @@ html, body {
 
 .carousel-inner{
 	width: 100%;
-	max-height: 800px !important;
+	max-height: 100% !important;
 
-	background-color:rgb(52, 58, 64);
+	background-color:rgba(52, 58, 64, 0.9);
 }
 
 .carousel-item img{
 	width: auto;
-	height: 800px;
-	max-height: 800px;
+	height: 100%;
+	max-height: 700px;
     object-fit: contain;
 }
 
@@ -380,12 +374,15 @@ html, body {
 
 
 #particles-js{ 
-	position:absolute; width: 100%;
+	position:absolute; 
+	top: 0;
+	width: 100%;
 	height: 100%; 
 	background-image: -webkit-linear-gradient(left, #92805d, rgb(160, 111, 66));
 	background-repeat: no-repeat; 
 	background-size: cover; 
 	background-position: 50% 50%; 
+	z-index: -10;
 }
 
 /* Works on Chrome/Edge/Safari */
@@ -421,14 +418,8 @@ html, body {
 		margin-top: 75px;
 		font-size: 2em;
 	}
-
-	.photography__comment > h1 { 
-		margin-top: 20px;
-		font-size: 2em; 
-	}
 	
-	.intro__text > p,
-	.photography__comment > p{
+	.intro__text > p{
 		font-family: 'Quicksand', sans-serif;
 		font-size: 1.5em;
 	}

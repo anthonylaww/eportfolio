@@ -9,6 +9,10 @@ $(document).ready(function() {
             $(this).removeClass('shadow-lg');
         }
     );
-    /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+
     particlesJS.load('particles-js', '../assets/particles.json');
+});
+
+document.getElementById('container__photography').addEventListener('click', e => {
+    e.target.scrollIntoView();
 });
