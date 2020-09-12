@@ -8,7 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="particles.js"></script>
+    <script src="js/particles.js"></script>
     <title>Anthony Law - ePortfolio</title>
 </head>
 <body id='page' onload="preloader()">
@@ -107,7 +107,7 @@
                 <div class="card shadow project_card">
                     <div class="card-body">
                         <h5 class="card-title">Bepis Bot</h5>
-                        <img class=".img-responsive" style="height: auto; width: 11em; max-width:100%" src="./assets/bepis_bot.png">
+                        <img class=".img-responsive" id="bepis-img" src="./assets/bepis_bot.PNG">
                         <p class="card-text">
                             Instead of paying for a licenced reaction role bot for the Warwick Card Games server - a subcommunity within Warwick Esports, 
                             I created Bepis bot. There is a designated message that members will add a reaction to, in order to receive a role on the server.
@@ -119,7 +119,7 @@
                 <div class="card shadow project_card">
                     <div class="card-body">
                         <h5 class="card-title">ePortfolio</h5>
-                        <img class=".img-responsive" style="height: auto; width: 10em; max-width:100%" src="./assets/document_icon.png">
+                        <img class=".img-responsive" id="eportfolio-img" src="./assets/document_icon.png">
                         <p class="card-text">
                             To showcase just a few of my most recent projects to potential employers such as you, I created this ePortfolio which highlights just some of my technical skills. 
                             This website uses a mix of HTML5, CSS3 and ES5. Any JavaScript that is ES6 and above is polyfilled with babel-polyfill. 
@@ -131,10 +131,10 @@
                 <div class="card shadow project_card">
                     <div class="card-body">
                         <h5 class="card-title">Forkify</h5>
-                        <img class=".img-responsive" style="height: auto; width: 30em; max-width:100%" src="./assets/forkify_logo.png">
+                        <img class=".img-responsive" id="forkify-img" src="./assets/forkify_logo.png">
                         <p class="card-text">
-                            As part of a JavaScript Udemy course by Jonas Schmedtmann, I learnt to create a web application that involved the use of APIs and modern JavaScript techniques in ES6.
-                            In this course, I learnt about different JavaScript compatabilities with websites and polyfills to convert modern ES6 and above JavaScript, into ES5 which is compatible on more browsers than ES6 and above.
+                            As part of a JavaScript Udemy course by Jonas Schmedtmann, I learnt to create a web application that involved the use of APIs and modern JavaScript (ES6) techniques.
+                            In this course, I learnt about different JavaScript versions' compatabilities with browsers.
                             I also learnt about CORS and recognised the need of a CORS proxy for API usage for non-profitable and independant projects.
                             As an extension of the project, I implemented a better shopping cart function and improved the portion calculation algorithm and more.
                         </p>
@@ -144,9 +144,9 @@
         </div>
     
         <div class="container-md" id="container__photography">
-                <div class="photography">
-                    <h1 id="photography__title"><span>PHOTOGRAPHY</span></h1>
-                </div>
+            <div class="photography">
+                <h1 id="photography__title"><span>PHOTOGRAPHY</span></h1>
+            </div>
             <div class="photography__gallery">
                 <div id="gallery" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
